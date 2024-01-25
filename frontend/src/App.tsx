@@ -94,7 +94,6 @@ function App() {
                 {!isAuth ? (
                   <Stack spacing={2} direction="row">
                     <Button
-                      className="Button"
                       variant="contained"
                       color="secondary"
                       component={RouterLink}
@@ -103,7 +102,6 @@ function App() {
                       Login
                     </Button>
                     <Button
-                      className="Button"
                       variant="contained"
                       color="secondary"
                       component={RouterLink}
@@ -115,7 +113,6 @@ function App() {
                 ) : (
                   <Stack spacing={2} direction="row">
                     <Button
-                      className="Button"
                       variant="contained"
                       component={RouterLink}
                       to="/post_question"
