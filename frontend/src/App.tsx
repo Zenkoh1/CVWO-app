@@ -31,8 +31,12 @@ async function authenticate(): Promise<boolean> {
     const authTokenExists = auth_token !== null && auth_token !== undefined;
 
     if (authTokenExists) {
-      await session.actions.loginUserWithToken(auth_token);
-      return true;
+      try {
+        await session.actions.loginUserWithToken(auth_token);
+        return true;
+      } catch (error) {
+        return false;
+      }
     }
   }
   return false;
