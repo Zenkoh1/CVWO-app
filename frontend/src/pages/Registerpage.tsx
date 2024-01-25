@@ -30,7 +30,6 @@ const Registerpage = () => {
             setIsAuth(true);
           }
         });
-      console.log(email, password);
     }
   };
 

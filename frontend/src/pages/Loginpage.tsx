@@ -21,7 +21,6 @@ const Loginpage = () => {
           navigate("/");
         }
       });
-      console.log(email, password);
     }
   };
 
