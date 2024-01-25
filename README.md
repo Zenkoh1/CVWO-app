@@ -15,7 +15,7 @@ You will need:
 From the command line, clone the repository:
 
 ```sh
-$ git clone https://github.com/reach/react-fundamentals.git
+git clone https://github.com/Zenkoh1/CVWO-app.git
 ```
 
 ## Step 3 Setup Frontend
