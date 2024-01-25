@@ -49,10 +49,12 @@ const Questionpage = () => {
   const { fetchAPI: fetchDeleteAPI } = useAPI(`/api/v1/questions/${id}`, {
     method: "DELETE",
   });
+
   useEffect(() => {
     fetchAPI();
   }, []);
 
+  /* Get the answers for the question and sort them by date */
   useEffect(() => {
     if (question) {
       let newAnswers = Object.values(question.answers).map(
@@ -104,6 +106,7 @@ const Questionpage = () => {
     }
   };
 
+  /* Delete an answer from React state */
   const onDeleteAnswer = (answer: AnswerType) => {
     setAnswers(answers.filter((a) => a.id !== answer.id));
   };

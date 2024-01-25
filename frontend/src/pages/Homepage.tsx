@@ -93,7 +93,10 @@ const Homepage = () => {
     setFilteredData(newData);
   };
 
-  const getQuestionData = (filteredData: Array<QuestionType> | undefined) => {
+  /* Get the question components to display */
+  const getQuestionComponents = (
+    filteredData: Array<QuestionType> | undefined,
+  ) => {
     if (filteredData === undefined || filteredData.length === 0) {
       return <Box py={2}>No results found</Box>;
     }
@@ -136,7 +139,7 @@ const Homepage = () => {
         />
       </form>
       <Stack divider={<Divider orientation="horizontal" flexItem />}>
-        {getQuestionData(filteredData)}
+        {getQuestionComponents(filteredData)}
       </Stack>
       <FilterDialog
         setOpen={setOpen}

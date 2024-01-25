@@ -66,7 +66,7 @@ function App() {
   }
 
   return (
-    /* Provider exposes whether the user is authenticated or not to the application*/
+    /* Provider exposes whether or not the user is authenticated to the application*/
     <session.SessionContext.Provider value={{ isAuth, setIsAuth }}>
       <div className="App">
         <BrowserRouter>

@@ -59,6 +59,7 @@ const Answer = ({ answer, onDelete: onDeleteParent }: AnswerProp) => {
     fetchUpvoteInfoAPI();
   }, []);
 
+  /* Set initial upvote info  */
   useEffect(() => {
     if (upvoteInfoData) {
       setUpvoteInfo({
@@ -94,7 +95,6 @@ const Answer = ({ answer, onDelete: onDeleteParent }: AnswerProp) => {
 
   const onUpvote = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-
     fetchUpvoteAPI()
       .then(() => {
         if (upvoteInfo.is_upvoted) {

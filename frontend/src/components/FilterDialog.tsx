@@ -19,6 +19,7 @@ const FilterDialog = ({
   const [selected, setSelected] = useState<Array<boolean>>([]);
   const [searchParams, setSearchParams] = useSearchParams();
 
+  /* Add selected categories to 'selected' array*/
   const onClick = (category: CategoryType) => {
     const id = category.id;
     setSelected((selected) => {
@@ -32,6 +33,7 @@ const FilterDialog = ({
     });
   };
 
+  /* Apply selected categories to search parameters*/
   const onApply = () => {
     setOpen(false);
     setSearchParams((prevSearchParams) => {
