@@ -124,8 +124,8 @@ const Homepage = () => {
             ),
             endAdornment: (
               <InputAdornment position="end">
-                <IconButton>
-                  <Tune onClick={() => setOpen(true)} />
+                <IconButton onClick={() => setOpen(true)}>
+                  <Tune />
                 </IconButton>
               </InputAdornment>
             ),
