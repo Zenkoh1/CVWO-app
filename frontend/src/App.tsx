@@ -70,17 +70,22 @@ function App() {
             <Toolbar
               style={{ display: "flex", justifyContent: "space-between" }}
             >
-              <div>
+              <Stack spacing={2} direction="row" alignItems="center">
                 <Typography
                   sx={{ textDecoration: "none", fontWeight: "bold" }}
-                  variant="h6"
+                  variant="h5"
                   color="inherit"
                   component={RouterLink}
                   to="/"
                 >
                   Parentit
                 </Typography>
-              </div>
+                {isAuth && (
+                  <Typography variant="h6">
+                    Welcome {session.getters.getUser().username}!
+                  </Typography>
+                )}
+              </Stack>
               <div>
                 {!isAuth ? (
                   <Stack spacing={2} direction="row">

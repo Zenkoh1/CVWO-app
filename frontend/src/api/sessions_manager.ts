@@ -68,7 +68,7 @@ const getters = {
 
 const actions = {
   registerUser: (payload: payloadType) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       axios
         .post(`${API_URL}/users`, payload)
         .then((response) => {
@@ -79,14 +79,16 @@ const actions = {
           if (error.response.status === 401 || error.response.status === 422) {
             alert("Error registering account, refresh and try again.");
           } else {
-            reject(error);
+            alert(
+              "Error registering account, try again with different credentials.",
+            );
           }
         });
     });
   },
 
   loginUser: (payload: payloadType) => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       axios
         .post(`${API_URL}/users/sign_in`, payload)
         .then((response) => {
@@ -97,7 +99,7 @@ const actions = {
           if (error.response.status === 401 || error.response.status === 422) {
             alert("Invalid username or password.");
           } else {
-            reject(error);
+            alert("Error logging in, try again with different credentials.");
           }
         });
     });
@@ -109,19 +111,15 @@ const actions = {
         authorization: state.auth_token,
       },
     };
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       axios
         .delete(`${API_URL}/users/sign_out`, config)
         .then((response) => {
           mutations.resetUserInfo();
           resolve(response);
         })
-        .catch((error) => {
-          if (error.response.status === 401 || error.response.status === 422) {
-            alert("Error logging out, refresh and try again.");
-          } else {
-            reject(error);
-          }
+        .catch(() => {
+          alert("Error logging out, refresh and try again.");
         });
     });
   },
@@ -132,20 +130,16 @@ const actions = {
         Authorization: auth_token,
       },
     };
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       axios
         .get(`${API_URL}/member-data`, config)
         .then((response) => {
           mutations.setUserInfoFromToken(response);
           resolve(response);
         })
-        .catch((error) => {
-          if (error.response.status === 401 || error.response.status === 422) {
-            alert("Your session has expired. Please log in again.");
-            mutations.resetUserInfo();
-          } else {
-            reject(error);
-          }
+        .catch(() => {
+          alert("Your session has expired. Please log in again.");
+          mutations.resetUserInfo();
         });
     });
   },
