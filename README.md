@@ -28,7 +28,7 @@ npm install
 
 ### Step 3.2 Set up environment variables
 
-In `.env.development`, replace the url with the url of the rails API.
+In `.env.development`, replace the url with the url of the rails API. It should be correct by default.
 
 ```sh
 REACT_APP_API_ENDPOINT=http://localhost:3000
@@ -53,8 +53,7 @@ bundle update
 
 ### Step 4.2 Set up frontend url
 
-In `config/environments/development.rb`, replace the url with the url of the frontend, you should not
-need to change it by default.
+In `config/environments/development.rb`, replace the url with the url of the frontend. It should be correct by default.
 
 ```sh
 config.allowed_cors_origins = ["http://localhost:3001"]
