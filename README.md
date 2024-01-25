@@ -64,7 +64,7 @@ Firstly, run `rails secret` to get the jwt_secret_key.
 
 Then, run `EDITOR=code rails credentials:edit`, replacing `code` with a text editor of your choice (nano, vim etc.).
 
-Finally, to the opened file `xxx-credentials.yml`, add the information below, inputting the appropriate information within the the curly braces.
+Finally, to the opened file `xxx-credentials.yml`, add the configurations below, inputting the appropriate information within the curly braces.
 
 ```sh
 postgresql:
