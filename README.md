@@ -34,7 +34,7 @@ In `.env.development`, replace the url with the url of the rails API. It should 
 REACT_APP_API_ENDPOINT=http://localhost:3000
 ```
 
-### Step 3.3 - Run an app
+### Step 3.3 - Run the frontend
 
 Start the React frontend with 
 
@@ -82,7 +82,7 @@ rails db:migrate
 rails db:seed
 ```
 
-### Step 4.5 - Run an app
+### Step 4.5 - Run the backend
 
 Start the Rails API backend with 
 
